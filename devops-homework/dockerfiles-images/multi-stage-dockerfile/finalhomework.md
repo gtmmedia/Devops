@@ -2,17 +2,7 @@
 
 ## Student Information
 
-**Name:** YOUR NAME
-
-**Enrollment Number:** YOUR ENROLLMENT NUMBER
-
----
-
-# Docker Multi-Stage Build Homework
-
-## Student Information
-
-**Name:** gtmmedia
+**Name:** Gautam
 
 **Enrollment Number:** 24BCS10616
 
