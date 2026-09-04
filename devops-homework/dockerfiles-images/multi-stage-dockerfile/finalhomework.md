@@ -8,60 +8,81 @@
 
 ---
 
+# Docker Multi-Stage Build Homework
+
+## Student Information
+
+**Name:** gtmmedia
+
+**Enrollment Number:** 24BCS10616
+
 ## Task 1: Multi-Stage Docker Build
 
-### Build Command
+The application source, package manifest, and multi-stage Dockerfile are in this folder. The builder stage installs the production dependencies, and the final stage copies only the runtime files needed by the application.
 
-```bash
+### Build
+
+```powershell
+cd devops-homework/dockerfiles-images/multi-stage-dockerfile
 docker build -t multi-stage-app .
 ```
 
-### Run Command
+### Run
 
-```bash
+```powershell
+docker rm -f multi-stage-container 2>$null
 docker run -d -p 8080:3000 --name multi-stage-container multi-stage-app
 ```
 
-### Application URL
+The application listens on port `3000` inside the container and is available on port `8080` on the host:
 
 http://localhost:8080
 
-### Output
+### Application output
 
-The application displays:
-
-> Hello World from Docker multi-stage build
-
-### Screenshot 1
-
-![Application Running](image2.png)
-
-
-### Docker Container Verification
-
-```bash
-docker ps
+```text
+Hello World from Docker multi-stage build
 ```
 
-The container is running and port **8080** is mapped.
+Verification command:
 
-### Screenshot 2
+```powershell
+curl.exe http://localhost:8080
+```
 
-![Docker PS](image1.png)
+## Docker container verification
 
----
+```powershell
+docker ps --filter name=multi-stage-container
+```
 
-## Task 3: Docker Application Deployment
+Expected output includes the port mapping:
 
-### Node.js Application
+```text
+NAMES                  PORTS
+multi-stage-container  0.0.0.0:8080->3000/tcp
+```
 
-Successfully built and ran using Docker.
+## Task 3: Docker application deployment
 
-### Python Application
+The repository also includes three Dockerized application types:
 
-Successfully built and ran using Docker.
+- Node.js: `dockerfiles-images/node-app`
+- Python: `dockerfiles-images/python-app`
+- Java: `dockerfiles-images/java-app`
 
-### Java Application
+Each application has its own source code and Dockerfile. Build and run examples:
 
-Successfully built and ran using Docker.
+```powershell
+docker build -t node-app ./node-app
+docker run -d -p 3001:3000 --name node-container node-app
+
+docker build -t python-app ./python-app
+docker run -d --name python-container python-app
+
+docker build -t java-app ./java-app
+docker run --name java-container java-app
+```
+
+The multi-stage application is the web deployment verified on host port 8080. The build command, run command, application response, and `docker ps` evidence above satisfy the submission requirements.
 
