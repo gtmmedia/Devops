@@ -9,7 +9,7 @@ spec:
   selector:
     app: web-clusterip
   ports:
-    - name: http
+    - name: http # optional
       port: 8080
       targetPort: 80
-      protocol: TCP
+      protocol: TCP # optional  
