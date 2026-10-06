@@ -2,7 +2,7 @@
 resource "aws_s3_bucket" "gtm007" {
 =======
 resource "aws_s3_bucket" "devops553" {
->>>>>>> a6e7e9464a333058fc42f0b0102eb9bf689baa53
+>>>>>>> 8376590a668ac8d6f2700d181c0739d0ed3fc5ea
   bucket        = var.bucket_name
   force_destroy = true
   tags = {

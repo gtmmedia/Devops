@@ -5,7 +5,7 @@ output "bucket_name" {
   value       = aws_s3_bucket.gtm007.bucket
 =======
   value       = aws_s3_bucket.devops553.bucket
->>>>>>> a6e7e9464a333058fc42f0b0102eb9bf689baa53
+>>>>>>> 8376590a668ac8d6f2700d181c0739d0ed3fc5ea
 }
 output "bucket_arn" {
   type        = string
@@ -14,7 +14,7 @@ output "bucket_arn" {
   value       = aws_s3_bucket.gtm007.arn
 =======
   value       = aws_s3_bucket.devops553.arn
->>>>>>> a6e7e9464a333058fc42f0b0102eb9bf689baa53
+>>>>>>> 8376590a668ac8d6f2700d181c0739d0ed3fc5ea
 }
 output "bucket_region" {
   type        = string
@@ -23,5 +23,5 @@ output "bucket_region" {
   value       = aws_s3_bucket.gtm007.region
 =======
   value       = aws_s3_bucket.devops553.region
->>>>>>> a6e7e9464a333058fc42f0b0102eb9bf689baa53
+>>>>>>> 8376590a668ac8d6f2700d181c0739d0ed3fc5ea
 }
